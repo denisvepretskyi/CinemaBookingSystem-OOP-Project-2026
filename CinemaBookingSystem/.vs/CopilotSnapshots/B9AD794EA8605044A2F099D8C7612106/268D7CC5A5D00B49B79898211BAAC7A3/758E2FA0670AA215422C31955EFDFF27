@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CinemaBookingSystem.Core.Models
+{
+    internal class Session : BaseEntity
+    {
+        public int HallId { get; set; }
+        public int CinemaId { get; set; }
+        public int MovieId { get; set; }
+        public DateTime StartTime { get; set; }
+        public decimal Price { get; set; }
+
+    }
+}

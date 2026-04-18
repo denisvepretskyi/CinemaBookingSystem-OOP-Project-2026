@@ -1,0 +1,12 @@
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\CinemaBookingSystem.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\CinemaBookingSystem.Core.AssemblyInfoInputs.cache
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\CinemaBookingSystem.Core.AssemblyInfo.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\CinemaBookingSystem.Core.csproj.CoreCompileInputs.cache
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\CinemaBookingSystem.Core.sourcelink.json
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\bin\Debug\net10.0\CinemaBookingSystem.Core.deps.json
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\bin\Debug\net10.0\CinemaBookingSystem.Core.dll
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\bin\Debug\net10.0\CinemaBookingSystem.Core.pdb
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\CinemaBookingSystem.Core.dll
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\refint\CinemaBookingSystem.Core.dll
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\CinemaBookingSystem.Core.pdb
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.Core\obj\Debug\net10.0\ref\CinemaBookingSystem.Core.dll
