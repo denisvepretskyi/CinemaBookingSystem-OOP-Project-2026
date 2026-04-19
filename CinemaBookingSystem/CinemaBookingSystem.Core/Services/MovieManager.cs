@@ -24,7 +24,7 @@ namespace CinemaBookingSystem.Core.Services
             int duration, string director, Genre genre)
         {
             var validation = MovieValidator.IsValidMovie(title, description, duration, director, genre);
-            if (!validation.isValid) return validation;
+            if (!validation.IsValid) return validation;
 
             var movie = new Movie()
             {
@@ -45,7 +45,7 @@ namespace CinemaBookingSystem.Core.Services
             var movie = _movieRepo.GetById(movieId);
             if (movie == null) return (false, "Фільм не знайдено!");
             var validation = MovieValidator.IsValidMovie(newTitle, newDescription, newDuration, newDirector, newGenre);
-            if (!validation.isValid) return validation;
+            if (!validation.IsValid) return validation;
 
             movie.Title = newTitle;
             movie.Description = newDescription;

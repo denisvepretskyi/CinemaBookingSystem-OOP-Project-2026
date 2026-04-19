@@ -7,7 +7,7 @@ using CinemaBookingSystem.Core.Models;
 
 namespace CinemaBookingSystem.Core.Services
 {
-    internal class BookingManager
+    public class BookingManager
     {
         private IJsonRepository<Order> _orderRepo;
         private IJsonRepository<Session> _sessionRepo;

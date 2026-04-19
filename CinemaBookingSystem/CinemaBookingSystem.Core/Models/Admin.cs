@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CinemaBookingSystem.Core.Models
 {
-    internal class Admin : User
+    public class Admin : User
     {
     }
 }

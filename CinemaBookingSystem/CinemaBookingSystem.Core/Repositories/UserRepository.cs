@@ -7,7 +7,7 @@ using CinemaBookingSystem.Core.Models;
 
 namespace CinemaBookingSystem.Core.Repositories
 {
-    internal class UserRepository : JsonRepository<User>, IUserRepository
+    public class UserRepository : JsonRepository<User>, IUserRepository
     {
         public UserRepository(string filePath) : base(filePath)
         {

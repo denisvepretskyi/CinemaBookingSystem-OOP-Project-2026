@@ -20,7 +20,7 @@ namespace CinemaBookingSystem.Core.Validators
             _ticketRepo = ticketRepo;
         }
 
-        public (bool, string) CheckTimeConflicts(int cinemaId, int hallId, int movieId, DateTime currentStartTime)
+        public (bool IsValid, string Message) CheckTimeConflicts(int cinemaId, int hallId, int movieId, DateTime currentStartTime)
         {
             var currentMovie = _movieRepo.GetById(movieId);
             var currentEndTime = currentStartTime.AddMinutes(currentMovie.Duration).AddMinutes(15);
@@ -40,7 +40,7 @@ namespace CinemaBookingSystem.Core.Validators
             return (false, ""); // конфлікт відсутній
         }
 
-        public (bool, string) IsTicketsSold(int sessionId)
+        public (bool IsValid, string Message) IsTicketsSold(int sessionId)
         {
             var tickets = _ticketRepo.GetAll();
             var hasSoldTicket = tickets.Any(t => t.SessionId == sessionId);
@@ -52,17 +52,18 @@ namespace CinemaBookingSystem.Core.Validators
         }
 
 
-        public (bool, string) IsValidToAdd(int cinemaId, int hallId, int movieId, DateTime startTime, decimal price)
+        public (bool IsValid, string Message) IsValidToAdd(int cinemaId, int hallId, int movieId, DateTime startTime, decimal price)
         {
             string message;
-            (bool isTimeConflict, message) = CheckTimeConflicts(cinemaId, hallId, movieId, startTime);
             if (startTime < DateTime.Now) return (false, "Не можна додати сеанс на минулу дату!");
+            (bool isTimeConflict, message) = CheckTimeConflicts(cinemaId, hallId, movieId, startTime);
+            
             if (isTimeConflict) return (false, message);
             if (price <= 0) return (false, "Ціна має бути більшою за нуль!");
             return (true, "");
         }
 
-        public (bool, string) IsValidToEdit(int sessionId, int cinemaId, int hallId, int movieId, DateTime startTime, decimal price)
+        public (bool IsValid, string Message) IsValidToEdit(int sessionId, int cinemaId, int hallId, int movieId, DateTime startTime, decimal price)
         {
             var session = _sessionRepo.GetById(sessionId);
             string message;
@@ -77,7 +78,7 @@ namespace CinemaBookingSystem.Core.Validators
         }
 
 
-        public (bool, string) IsValidToDelete(int sessionId)
+        public (bool IsValid, string Message) IsValidToDelete(int sessionId)
         {
             var session = _sessionRepo.GetById(sessionId);
             if (session == null) return (false, "Сеанс не знайдено!");

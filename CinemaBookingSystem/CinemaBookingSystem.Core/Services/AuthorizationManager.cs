@@ -4,10 +4,11 @@ using System.Text;
 using CinemaBookingSystem.Core.Interfaces;
 using CinemaBookingSystem.Core.Repositories;
 using CinemaBookingSystem.Core.Models;
+using CinemaBookingSystem.Core.Validators;
 
 namespace CinemaBookingSystem.Core.Services
 {
-    internal class AuthorizationManager
+    public class AuthorizationManager
     {
         public User currentUser {  get; private set; }
         IUserRepository _userRepo;
@@ -34,6 +35,13 @@ namespace CinemaBookingSystem.Core.Services
         public (bool, string) Register(string name, string phoneNumber, string password)
         {
             if (_userRepo.IsPhoneExists(phoneNumber)) return (false, "Користувач з таким номером телефону вже існує!");
+
+            var numberValidation = UserValidator.IsValidPhoneNumber(phoneNumber);
+            if (numberValidation.IsValid == false) return numberValidation;
+
+            var passwordValidation = UserValidator.IsValidPassword(password);
+            if (passwordValidation.IsValid == false) return passwordValidation;
+
             User newUser = new Customer()
             {
                 Name = name,

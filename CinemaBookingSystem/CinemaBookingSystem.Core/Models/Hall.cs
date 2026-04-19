@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CinemaBookingSystem.Core.Models
 {
-    internal class Hall : BaseEntity
+    public class Hall : BaseEntity
     {
         public int CinemaId { get; set; }
         public string Name { get; set; }

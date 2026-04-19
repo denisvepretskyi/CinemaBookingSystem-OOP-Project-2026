@@ -9,7 +9,7 @@ using CinemaBookingSystem.Core.Models;
 
 namespace CinemaBookingSystem.Core.Repositories
 {
-    internal class JsonRepository<T> : IJsonRepository<T> where T : BaseEntity
+    public class JsonRepository<T> : IJsonRepository<T> where T : BaseEntity
     {
         private readonly string _filePath;
         private readonly JsonSerializerOptions _jsonOptions;        
