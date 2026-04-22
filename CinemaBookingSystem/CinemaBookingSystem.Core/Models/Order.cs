@@ -10,6 +10,5 @@ namespace CinemaBookingSystem.Core.Models
         public List<Ticket> Tickets { get; set; } = new List<Ticket>();
         public decimal TotalPrice { get; set; }
         public DateTime Date { get; set; }
-        public bool IsCancelled { get; set; }
     }
 }

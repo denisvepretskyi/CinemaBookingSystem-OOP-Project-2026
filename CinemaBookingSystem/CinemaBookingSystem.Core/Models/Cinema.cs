@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace CinemaBookingSystem.Core.Models
 {
@@ -8,6 +9,8 @@ namespace CinemaBookingSystem.Core.Models
     {
         public string Name { get; set; }
         public string Address { get; set; }
+
+        [JsonIgnore]
         public List<Hall> Halls { get; set; } = new List<Hall>();
 
     }

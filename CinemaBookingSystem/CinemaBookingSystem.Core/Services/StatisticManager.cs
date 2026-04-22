@@ -7,21 +7,28 @@ using System.Text;
 
 namespace CinemaBookingSystem.Core.Services
 {
-    internal class StatisticManager
+    public class StatisticManager
     {
-        private IJsonRepository<Order> _orderRepo;
-        private IJsonRepository<Session> _sessionRepo;
-        private IJsonRepository<Movie> _movieRepo;
+        private readonly IJsonRepository<Order> _orderRepo;
+        private readonly IJsonRepository<Session> _sessionRepo;
+        private readonly IJsonRepository<Movie> _movieRepo;
+        private readonly IJsonRepository<Cinema> _cinemaRepo;
 
-        public StatisticManager(IJsonRepository<Order> orderRepo, IJsonRepository<Session> sessionRepo, IJsonRepository<Movie> movieRepo)
+        public StatisticManager
+            (IJsonRepository<Order> orderRepo, 
+            IJsonRepository<Session> sessionRepo, 
+            IJsonRepository<Movie> movieRepo, 
+            IJsonRepository<Cinema> cinemaRepo)
         {
             _orderRepo = orderRepo;
             _sessionRepo = sessionRepo;
             _movieRepo = movieRepo;
+            _cinemaRepo = cinemaRepo;
         }
 
         public decimal GetCinemaTotalAmount(int cinemaId)
         {
+            if(_cinemaRepo.GetById(cinemaId) == null)  return 0;
             List<int> sessionsIds = _sessionRepo.GetAll()
                 .Where(session => session.CinemaId == cinemaId)
                 .Select(session => session.Id).ToList();
@@ -35,6 +42,7 @@ namespace CinemaBookingSystem.Core.Services
 
         public Movie GetMostPopularMovie(int cinemaId)
         {
+            if (_cinemaRepo.GetById(cinemaId) == null) return null;
             var cinemaSessions = _sessionRepo.GetAll()
                 .Where(session => session.CinemaId == cinemaId);
 
@@ -54,8 +62,6 @@ namespace CinemaBookingSystem.Core.Services
                 .FirstOrDefault();
 
             return _movieRepo.GetById(mostPopularMovieId);
-
-
         }
 
     }

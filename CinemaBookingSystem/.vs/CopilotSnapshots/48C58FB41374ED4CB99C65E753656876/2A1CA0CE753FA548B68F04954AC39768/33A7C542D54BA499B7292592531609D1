@@ -1,0 +1,35 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CinemaBookingSystem.Core.Interfaces;
+using CinemaBookingSystem.Core.Models;
+using CinemaBookingSystem.Core.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CimemaBookingSystem.Tests.Repositories.Tests
+{
+    [TestClass]
+    public class OrderRepositoryTests
+    {
+        private string _orderFilePath;
+        private string _userFilePath;
+
+        private IOrderRepository _testOrderRepo;
+        private IUserRepository _testUserRepo;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _orderFilePath = $"test_order_db_{Guid.NewGuid()}.json";
+            _userFilePath = $"test_user_db_{Guid.NewGuid()}.json";
+
+            _testOrderRepo = new OrderRepository(_orderFilePath);
+            _testUserRepo = new UserRepository(_userFilePath);
+        }
+
+        [TestMethod]
+        public void Placeholder()
+        {
+        }
+    }
+}

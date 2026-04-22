@@ -12,6 +12,7 @@ namespace CinemaBookingSystem.Core.Models
         public List<Genre> Genres { get; set; } = new List<Genre>();
         public int Duration { get; set; }
         public string Director { get; set; }
+        public string PosterPath { get; set; }
 
 
     }

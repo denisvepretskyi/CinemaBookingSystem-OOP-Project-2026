@@ -11,43 +11,60 @@ namespace CinemaBookingSystem.Core.Validators
     {
         private readonly IJsonRepository<Movie> _movieRepo;
         private readonly IJsonRepository<Session> _sessionRepo;
-        private readonly IJsonRepository<Ticket> _ticketRepo;
+        private readonly IOrderRepository _orderRepo;
 
-        public SessionValidator(IJsonRepository<Movie> movieRepo, IJsonRepository<Session> sessionRepo, IJsonRepository<Ticket> ticketRepo)
+        public SessionValidator(IJsonRepository<Movie> movieRepo, IJsonRepository<Session> sessionRepo, IOrderRepository orderRepo)
         {
             _movieRepo = movieRepo;
             _sessionRepo = sessionRepo;
-            _ticketRepo = ticketRepo;
+            _orderRepo = orderRepo;
         }
 
-        public (bool IsValid, string Message) CheckTimeConflicts(int cinemaId, int hallId, int movieId, DateTime currentStartTime)
+        private (bool IsValid, string Message) CheckTimeConflicts(int cinemaId, int hallId, int movieId, DateTime currentStartTime)
+        {
+            return CheckTimeConflicts(cinemaId, hallId, movieId, currentStartTime, -1);
+        }
+
+        
+        private (bool IsValid, string Message) CheckTimeConflicts(int cinemaId, int hallId, int movieId, DateTime currentStartTime, int excludeSessionId)
         {
             var currentMovie = _movieRepo.GetById(movieId);
+            if (currentMovie == null) return (false, "Фільм не знайдено!");
+
             var currentEndTime = currentStartTime.AddMinutes(currentMovie.Duration).AddMinutes(15);
             var sessions = _sessionRepo.GetAll();
+
             foreach (var session in sessions)
             {
+                if (session.Id == excludeSessionId)
+                {
+                    continue;
+                }
+
                 if (session.CinemaId == cinemaId && session.HallId == hallId)
                 {
                     var movie = _movieRepo.GetById(session.MovieId);
                     var sessionEndTime = session.StartTime.AddMinutes(movie.Duration).AddMinutes(15);
+
                     if (currentStartTime < sessionEndTime && currentEndTime > session.StartTime)
                     {
-                        return (true, "Конфікт часу!"); //  конфлікт існує
+                        return (true, "Конфікт часу!");
                     }
                 }
             }
-            return (false, ""); // конфлікт відсутній
+            return (false, "");
         }
 
-        public (bool IsValid, string Message) IsTicketsSold(int sessionId)
+        private (bool IsValid, string Message) IsTicketsSold(int sessionId)
         {
-            var tickets = _ticketRepo.GetAll();
-            var hasSoldTicket = tickets.Any(t => t.SessionId == sessionId);
-            if (hasSoldTicket)
-            {
-                return (true, "Неможливо видалити сеанс, оскільки на нього продано квитки!");
-            }
+            var allOrders = _orderRepo.GetAll();
+            var hasSoldTicket = allOrders
+                .SelectMany(order => order.Tickets) 
+                .Any(ticket => ticket.SessionId == sessionId); 
+
+            if (hasSoldTicket)            
+                return (true, "Неможливо видалити сеанс, оскільки на нього продано квитки!");          
+
             return (false, "");
         }
 
@@ -62,21 +79,17 @@ namespace CinemaBookingSystem.Core.Validators
             if (price <= 0) return (false, "Ціна має бути більшою за нуль!");
             return (true, "");
         }
-
-        public (bool IsValid, string Message) IsValidToEdit(int sessionId, int cinemaId, int hallId, int movieId, DateTime startTime, decimal price)
-        {
-            var session = _sessionRepo.GetById(sessionId);
+        public (bool IsValid, string Message) IsValidToEdit(int sessionId, int cinemaId,int hallId, int movieId, DateTime startTime, decimal price)
+        {            
             string message;
-
+            var session = _sessionRepo.GetById(sessionId);
             if (session == null) return (false, "Сеанс не знайдено!");
-            if (session.StartTime < DateTime.Now) return (false, "Цей сеанс вже минув!");
-
-            (bool isTimeConflict, message) = CheckTimeConflicts(cinemaId, hallId, movieId, startTime);
+            if (startTime < DateTime.Now) return (false, "Цей сеанс вже минув!");
+            (bool isTimeConflict, message) = CheckTimeConflicts(cinemaId, hallId, movieId, startTime, sessionId);
             if (isTimeConflict) return (false, message);
             if (price <= 0) return (false, "Ціна має бути більшою за нуль!");
             return (true, "");
         }
-
 
         public (bool IsValid, string Message) IsValidToDelete(int sessionId)
         {

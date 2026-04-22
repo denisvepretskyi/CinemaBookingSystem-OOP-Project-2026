@@ -7,8 +7,8 @@ namespace CinemaBookingSystem.Core.Models
     public class Ticket : BaseEntity
     {
         public int SessionId { get; set; }
-        public int Row { get; set; }
-        public int Column { get; set; }
+        public short Row { get; set; }
+        public short Column { get; set; }
         public decimal Price { get; set; }
 
     }

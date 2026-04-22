@@ -1,0 +1,14 @@
+[
+  {
+    "PhoneNumber": "0954095522",
+    "Password": "123pAssword",
+    "Name": "Test User 1",
+    "Id": 1
+  },
+  {
+    "PhoneNumber": "0953095522",
+    "Password": "123pAssword",
+    "Name": "Test User 2",
+    "Id": 2
+  }
+]
