@@ -48,7 +48,7 @@ namespace CinemaBookingSystem.Core.Validators
 
                     if (currentStartTime < sessionEndTime && currentEndTime > session.StartTime)
                     {
-                        return (true, "Конфікт часу!");
+                        return (true, "На цю дату та час в обраному залі вже є аткивний сеанс!");
                     }
                 }
             }

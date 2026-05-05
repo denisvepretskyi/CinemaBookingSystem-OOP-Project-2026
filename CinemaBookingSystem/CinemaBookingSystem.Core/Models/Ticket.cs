@@ -10,6 +10,7 @@ namespace CinemaBookingSystem.Core.Models
         public short Row { get; set; }
         public short Column { get; set; }
         public decimal Price { get; set; }
+        public int OrderId { get; set; }
 
     }
 }

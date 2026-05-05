@@ -8,7 +8,9 @@ namespace CinemaBookingSystem.Core.Models
     {
         public int HallId { get; set; }
         public int CinemaId { get; set; }
+        public string CinemaName { get; set; }
         public int MovieId { get; set; }
+        public string MovieTitle { get; set; }
         public DateTime StartTime { get; set; }
         public decimal Price { get; set; }
 

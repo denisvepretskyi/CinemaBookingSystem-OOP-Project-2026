@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "AjS8KQ51Ruo=",
+  "success": true,
+  "projectFilePath": "D:\\ЛАБЫ\\2 КУРС\\2\\ООП курсач\\CinemaBookingSystem-OOP-Project-2026\\CinemaBookingSystem\\CinemaBookingSystem.UI\\CinemaBookingSystem.UI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\denis\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.6\\microsoft.net.illink.tasks.10.0.6.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\10.0.6\\microsoft.netcore.app.runtime.win-x64.10.0.6.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\10.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.10.0.6.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.6\\microsoft.aspnetcore.app.runtime.win-x64.10.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}

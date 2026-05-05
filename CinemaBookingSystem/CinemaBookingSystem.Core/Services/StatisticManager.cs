@@ -40,6 +40,21 @@ namespace CinemaBookingSystem.Core.Services
             return totalAmount;
         }
 
+        public int GetTicketsSoldCount(int cinemaId)
+        {
+            if (_cinemaRepo.GetById(cinemaId) == null) return 0;
+            List<int> sessionsIds = _sessionRepo.GetAll()
+                .Where(session => session.CinemaId == cinemaId)
+                .Select(session => session.Id).ToList();
+
+            int ticketsSold = _orderRepo.GetAll().
+                SelectMany(order => order.Tickets).
+                Where(ticket => sessionsIds.Contains(ticket.SessionId)).Count();
+            return ticketsSold;
+        }
+                
+
+
         public Movie GetMostPopularMovie(int cinemaId)
         {
             if (_cinemaRepo.GetById(cinemaId) == null) return null;
@@ -63,6 +78,5 @@ namespace CinemaBookingSystem.Core.Services
 
             return _movieRepo.GetById(mostPopularMovieId);
         }
-
     }
 }

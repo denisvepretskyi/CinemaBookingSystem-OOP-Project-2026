@@ -1,0 +1,88 @@
+﻿<Page x:Class="CinemaBookingSystem.UI.Pages.BookingPageForGuest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaBookingSystem.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BookingPageForGuest">
+
+    <Grid>
+        <Grid Margin="40, 100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" VerticalAlignment="Top"
+            Background="#D6E0F5" 
+            CornerRadius="20" 
+            Margin="0,0,0,20">
+
+                <StackPanel Margin="30">
+                    <TextBlock  Text ="Інформація про сеанс" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+                    <TextBlock x:Name="MovieTitleTextBlock" VerticalAlignment="Top"  FontSize="18" >
+                        <Run Text="Назва фільму: " FontWeight="Bold"/>
+                        <Run Text="{Binding Title, StringFormat='{}{0}'}" FontFamily="Century Gothic"/>
+                    </TextBlock>
+
+                    <TextBlock FontSize="18">
+                        <Run Text="Ціна квитка: " FontWeight="Bold"/>
+                        <Run Text="{Binding Price,StringFormat='{}{0} грн.'}" FontFamily="Century Gothic"/>
+                    </TextBlock>
+
+                    <TextBlock FontSize="18">
+                        <Run Text="Дата та час: " FontWeight="Bold"/>
+                        <Run Text="{Binding StartTime, StringFormat='{}{0:dd.MM.yyyy - HH:mm}'}" FontFamily="Century Gothic"/>
+                    </TextBlock>
+
+                    <TextBlock x:Name="HallNameTextBlock" FontSize="18" Margin="0,20,0,0">
+                        <Run Text="Зал: " FontWeight="Bold"/>
+                        <Run Text="{Binding Name, StringFormat='{}{0}'}" FontFamily="Century Gothic"/>
+                    </TextBlock>
+
+                    <TextBlock x:Name="CinemaAddressTextBlock" FontSize="18">
+                        <Run Text="Адреса: " FontWeight="Bold"/>
+                        <Run Text="{Binding Address, StringFormat='{}{0}'}" FontFamily="Century Gothic"/>
+                    </TextBlock>
+                </StackPanel>
+
+            </Border>
+
+            <Border Grid.Row="1" Background="#FFC3CAD8"  CornerRadius="20">
+
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <TextBlock Text="Гість не може забронювати квиток" FontWeight="Bold" FontSize="40" FontFamily="Century Gothic" 
+                               Margin="0,0,0,0">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF404040" Offset="0.503"/>
+                                <GradientStop Color="Black" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+
+                    </TextBlock>
+
+                    <TextBlock Text="Необхідно авторизуватися" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" FontFamily="Century Gothic" 
+                               Margin="0,15,0,0">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF404040" Offset="0.503"/>
+                                <GradientStop Color="Black" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+
+                    </TextBlock>
+
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+    </Grid>
+</Page>

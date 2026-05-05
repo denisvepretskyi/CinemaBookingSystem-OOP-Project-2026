@@ -1,0 +1,58 @@
+﻿[
+  {
+    "Id": 1,
+    "CinemaId": 1,
+    "Name": "Grand Hall",
+    "RowCount": 7,
+    "ColumnCount": 16
+  },
+  {
+    "Id": 2,
+    "CinemaId": 1,
+    "Name": "Modern Hall (VIP)",
+    "RowCount": 8,
+    "ColumnCount": 18
+  },
+  {
+    "Id": 3,
+    "CinemaId": 2,
+    "Name": "Червоний зал",
+    "RowCount": 8,
+    "ColumnCount": 14
+  },
+  {
+    "Id": 4,
+    "CinemaId": 2,
+    "Name": "Синій зал",
+    "RowCount": 7,
+    "ColumnCount": 14
+  },
+  {
+    "Id": 5,
+    "CinemaId": 3,
+    "Name": "IMAX Зал",
+    "RowCount": 9,
+    "ColumnCount": 20
+  },
+  {
+    "Id": 6,
+    "CinemaId": 3,
+    "Name": "Стандарт Зал",
+    "RowCount": 8,
+    "ColumnCount": 12
+  },
+  {
+    "Id": 7,
+    "CinemaId": 4,
+    "Name": "Vantage Hall 1",
+    "RowCount": 8,
+    "ColumnCount": 10
+  },
+  {
+    "Id": 8,
+    "CinemaId": 4,
+    "Name": "Vintage Hall 2",
+    "RowCount": 7,
+    "ColumnCount": 10
+  }
+]

@@ -14,29 +14,35 @@ namespace CinemaBookingSystem.Core.Services
         IUserRepository _userRepo;
         IOrderRepository _orderRepo;
         public delegate void UserStatusHandler();
-        public event UserStatusHandler OnUserLoggedIn;
+        public event UserStatusHandler OnCustomerLoggedIn;
+        public event UserStatusHandler OnAdminLoggedIn;
         public event UserStatusHandler OnUserLoggedOut;
 
         public AuthorizationManager(IUserRepository userRepo, IOrderRepository orderRepo)
         {
             _userRepo = userRepo;
             _orderRepo = orderRepo;
-        }   
+        }
 
         public (bool IsSuccess, string Message) Login(string phoneNumber, string password)
         {
             User userToLogin = _userRepo.GetByPhone(phoneNumber);
-            if (userToLogin == null) return (false,"Користувача не знайдено!") ;
+            if (userToLogin == null) return (false, "Користувача не знайдено!");
             if (userToLogin.Password != password) return (false, "Невірний пароль!");
 
-            if(userToLogin is Customer customerInfo)            
-                customerInfo.Orders = _orderRepo.GetByUserId(customerInfo.Id); // підтягуємо замовлення
-                      
             currentUser = userToLogin;
-            OnUserLoggedIn?.Invoke();
-            return (true, "");            
+            if (currentUser is Admin)
+            {
+                OnAdminLoggedIn?.Invoke();
+            }
+            else if (currentUser is Customer)
+            {
+                OnCustomerLoggedIn?.Invoke();
+            }
+
+            return (true, "");
         }
-        
+
         public void Logout()
         {
             currentUser = null;
@@ -62,8 +68,8 @@ namespace CinemaBookingSystem.Core.Services
             };
             _userRepo.Add(newUser);
             currentUser = newUser;
-            OnUserLoggedIn?.Invoke();
-            return (true, "");
+            OnCustomerLoggedIn?.Invoke();
+            return (true, "Реєстрація пройшла успішно!");
         }
     }
 }

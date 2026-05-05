@@ -1,0 +1,20 @@
+﻿CinemaBookingSystem.UI
+
+
+winexe
+C#
+.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\
+CinemaBookingSystem.UI
+none
+false
+TRACE;RELEASE;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\App.xaml
+10791372603
+
+15-1885355547
+207-952468477
+Pages\BookingPage.xaml;Pages\BookingPageForGuest.xaml;Pages\CatalogPage.xaml;Pages\LoginPage.xaml;Pages\MovieDetailsPage.xaml;Pages\ProfilePage.xaml;Pages\RegisterPage.xaml;Pages\SelectCinemaPage.xaml;Windows\AuthWindow.xaml;Windows\MainWindow.xaml;
+
+False
+

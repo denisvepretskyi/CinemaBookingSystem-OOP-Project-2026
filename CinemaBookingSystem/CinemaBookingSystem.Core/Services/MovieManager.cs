@@ -21,9 +21,11 @@ namespace CinemaBookingSystem.Core.Services
         }
 
         public (bool isValid, string message) AddMovie(string title, string description,
-            int duration, string director, Genre genre)
+            int duration, string director, List<Genre> genres, string url)
         {
-            var validation = MovieValidator.IsValidMovie(title, description, duration, director, genre);
+            // Увага: переконайтеся, що ваш MovieValidator також оновлено для прийому List<Genre>,
+            // або просто приберіть жанри з валідатора, якщо він їх не перевіряє.
+            var validation = MovieValidator.IsValidMovie(title, description, duration, director, genres);
             if (!validation.IsValid) return validation;
 
             var movie = new Movie()
@@ -32,7 +34,8 @@ namespace CinemaBookingSystem.Core.Services
                 Description = description,
                 Duration = duration,
                 Director = director,
-                Genres = new List<Genre> { genre }
+                Genres = genres, // Тепер просто присвоюємо список
+                PosterPath = url
             };
 
             _movieRepo.Add(movie);
@@ -40,19 +43,22 @@ namespace CinemaBookingSystem.Core.Services
         }
 
         public (bool isValid, string message) EditMovie(int movieId, string newTitle, string newDescription,
-            int newDuration, string newDirector, Genre newGenre)
+            int newDuration, string newDirector, List<Genre> newGenres , string url) // Змінено на List<Genre>
         {
             var movie = _movieRepo.GetById(movieId);
             if (movie == null) return (false, "Фільм не знайдено!");
-            var validation = MovieValidator.IsValidMovie(newTitle, newDescription, newDuration, newDirector, newGenre);
+
+            var validation = MovieValidator.IsValidMovie(newTitle, newDescription, newDuration, newDirector, newGenres);
             if (!validation.IsValid) return validation;
 
             movie.Title = newTitle;
             movie.Description = newDescription;
             movie.Duration = newDuration;
             movie.Director = newDirector;
-            movie.Genres = new List<Genre> { newGenre };
+            movie.Genres = newGenres; // Присвоюємо новий список
+            movie.PosterPath = url;
             _movieRepo.Update(movie);
+
             return (true, "Фільм успішно оновлено!");
         }
 

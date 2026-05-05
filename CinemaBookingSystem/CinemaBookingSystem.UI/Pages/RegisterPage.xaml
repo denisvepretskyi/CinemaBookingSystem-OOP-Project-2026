@@ -1,0 +1,76 @@
+﻿<Page x:Class="CinemaBookingSystem.UI.Pages.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaBookingSystem.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegisterPage">
+
+    <Grid>
+
+
+        <StackPanel Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0">
+            <Image Source="pack://application:,,,/Images/logo" 
+           Height="35" 
+           Margin="0,0,0,25" 
+           Stretch="Uniform"
+           RenderOptions.BitmapScalingMode="HighQuality"/>
+            <TextBlock x:Name="LoginTextBlock" Text="Номер:" Foreground="#FFF7F6F7" Margin="0,0,0,5" FontFamily="Century Gothic"/>
+
+
+            <TextBox x:Name="LoginTextBox" Height="35" Margin="0,0,0,15" BorderThickness="0" Padding="10,5" Background="#FFE1E0F7">
+
+                <TextBox.ToolTip>
+                    <TextBlock FontSize="14">
+                    <Run Text="Формат: "/>
+                    <Run Text="'+380(XX)XXXXXXX' або '0(XX)XXXXXXX'"/>
+                    </TextBlock>
+                </TextBox.ToolTip>
+            </TextBox>
+            
+            <TextBlock x:Name="PasswordTextBlock" Text="Пароль:" Foreground="#FFF7F6F7" Margin="0,0,0,5" FontFamily="Century Gothic"/>
+            <TextBox x:Name="PasswordTextBox" Height="35" Margin="0,0,0,15" 
+                 Background="#FFE1E0F7" BorderThickness="0" Padding="10,5">
+
+                <TextBox.ToolTip>
+                    <TextBlock FontSize="14">
+                    <Run Text="Щонайменшe 8 символів"/>
+                        <LineBreak/>
+                    <Run Text="Принаймні 1 велика літера"/>
+                        <LineBreak/>                       
+                    <Run Text="Принаймні 1 маленька літера"/> 
+                        <LineBreak/>
+                    <Run Text="Принаймні 1 цифра"/>
+                    </TextBlock>
+                </TextBox.ToolTip>
+
+            </TextBox>
+
+            <TextBlock x:Name="NameTextBlock" Text="Ім'я:" Foreground="#FFF7F6F7" Margin="0,0,0,5" FontFamily="Century Gothic"/>
+            <TextBox x:Name="NameTextBox" Height="35" Margin="0,0,0,15" 
+                 Background="#FFE1E0F7" BorderThickness="0" Padding="10,5">
+
+                <TextBox.ToolTip>
+                    <TextBlock FontSize="14" Text="Необов'язкове поле"/>
+                </TextBox.ToolTip>
+
+            </TextBox>
+
+
+            <Button x:Name="RegistrationButton" Content="Реєстрація" Height="40" BorderThickness="0" 
+            Click="RegisterButton_Click" Cursor="Hand" FontFamily="Century Gothic" FontSize="14" Width="200" Margin="0,15,0,0">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,-1" SpreadMethod="Pad" MappingMode="RelativeToBoundingBox">
+                        <GradientStop Color="#FFD5DBFB" Offset="0.003"/>
+                        <GradientStop Color="White" Offset="0.503"/>
+                        <GradientStop Color="#FFD5DBFB" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

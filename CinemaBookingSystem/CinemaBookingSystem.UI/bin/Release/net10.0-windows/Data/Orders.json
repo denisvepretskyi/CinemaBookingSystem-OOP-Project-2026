@@ -1,0 +1,202 @@
+[
+  {
+    "UserId": 1,
+    "Tickets": [
+      {
+        "SessionId": 1,
+        "Row": 1,
+        "Column": 6,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 3
+      },
+      {
+        "SessionId": 1,
+        "Row": 1,
+        "Column": 7,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 4
+      },
+      {
+        "SessionId": 1,
+        "Row": 1,
+        "Column": 8,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 5
+      },
+      {
+        "SessionId": 1,
+        "Row": 1,
+        "Column": 12,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 6
+      },
+      {
+        "SessionId": 1,
+        "Row": 2,
+        "Column": 8,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 7
+      },
+      {
+        "SessionId": 1,
+        "Row": 2,
+        "Column": 12,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 8
+      },
+      {
+        "SessionId": 1,
+        "Row": 3,
+        "Column": 8,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 9
+      },
+      {
+        "SessionId": 1,
+        "Row": 3,
+        "Column": 12,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 10
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 4,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 11
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 5,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 12
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 6,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 13
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 7,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 14
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 8,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 15
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 9,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 16
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 10,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 17
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 11,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 18
+      },
+      {
+        "SessionId": 1,
+        "Row": 4,
+        "Column": 12,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 19
+      },
+      {
+        "SessionId": 1,
+        "Row": 5,
+        "Column": 4,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 20
+      },
+      {
+        "SessionId": 1,
+        "Row": 5,
+        "Column": 8,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 21
+      },
+      {
+        "SessionId": 1,
+        "Row": 6,
+        "Column": 4,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 22
+      },
+      {
+        "SessionId": 1,
+        "Row": 6,
+        "Column": 8,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 23
+      },
+      {
+        "SessionId": 1,
+        "Row": 7,
+        "Column": 4,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 24
+      },
+      {
+        "SessionId": 1,
+        "Row": 7,
+        "Column": 8,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 25
+      },
+      {
+        "SessionId": 1,
+        "Row": 7,
+        "Column": 9,
+        "Price": 120.00,
+        "OrderId": 1,
+        "Id": 26
+      }
+    ],
+    "TotalPrice": 2880.00,
+    "Date": "2026-04-30T20:52:20.8821371+03:00",
+    "Id": 1
+  }
+]

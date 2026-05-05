@@ -55,7 +55,9 @@ namespace CinemaBookingSystem.Core.Services
                 HallId = hallId,
                 MovieId = movieId,
                 StartTime = startTime,
-                Price = price
+                Price = price,
+                CinemaName = _cinemaRepo.GetById(cinemaId)?.Name,
+                MovieTitle = _movieRepo.GetById(movieId)?.Title
             };
             _sessionRepo.Add(session);
             return (true, "Сеанс успішно додано!");

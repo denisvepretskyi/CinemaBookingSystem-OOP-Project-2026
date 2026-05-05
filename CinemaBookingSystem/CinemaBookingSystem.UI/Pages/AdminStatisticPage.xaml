@@ -1,0 +1,73 @@
+﻿<Page x:Class="CinemaBookingSystem.UI.Pages.AdminStatisticPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CinemaBookingSystem.UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminStatisticPage">
+
+    <Grid>
+
+        <TextBlock Text="Статистика кінотеатрів" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Margin="20,20,0,0"/>
+
+        <ItemsControl x:Name="StatisticsItemsControl" Margin="20, 70">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <!-- Картка статистики для одного кінотеатру -->
+                    <Border Background="White" CornerRadius="10" Margin="0,0,0,10" Padding="15">
+                        <Border.Effect>
+                            <!-- Легка тінь для краси (за бажанням) -->
+                            <DropShadowEffect Color="Black" Opacity="0.05" BlurRadius="5" ShadowDepth="1"/>
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <!-- 1. Кінотеатр -->
+                                <ColumnDefinition Width="2.5*"/>
+                                <!-- 2. Топ фільм -->
+                                <ColumnDefinition Width="2.5*"/>
+                                <!-- 3. Квитки -->
+                                <ColumnDefinition Width="1.5*"/>
+                                <!-- 4. Прибуток -->
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Головна колонка: Назва кінотеатру -->
+                            <TextBlock Grid.Column="0" Text="{Binding Name}" 
+                               VerticalAlignment="Center" FontWeight="Bold" FontSize="18" 
+                               Foreground="#2C3E50" TextWrapping="Wrap" Margin="0,0,10,0"/>
+
+                            <!-- Найпопулярніший фільм -->
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0">
+                                <TextBlock Text="Найпопулярніший фільм:" FontSize="11" Foreground="#888888" Margin="0,0,0,2"/>
+                                <TextBlock Text="{Binding MostPopularMovie}" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                            </StackPanel>
+
+                            <!-- Кількість проданих квитків -->
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" Margin="0,0,10,0">
+                                <TextBlock Text="Продано квитків:" FontSize="11" Foreground="#888888" Margin="0,0,0,2"/>
+                                <TextBlock VerticalAlignment="Center">
+                            <Run Text="{Binding TicketsSold}" FontWeight="Bold" FontSize="15"/>
+                            <Run Text=" шт." Foreground="#666666"/>
+                                </TextBlock>
+                            </StackPanel>
+
+                            <!-- Загальний прибуток -->
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center">
+                                <TextBlock Text="Загальний прибуток:" FontSize="11" Foreground="#888888" Margin="0,0,0,2"/>
+                                <TextBlock VerticalAlignment="Center">
+                            <!-- Формат N2 додає пробіли між тисячами і два нулі копійок -->
+                            <Run Text="{Binding TotalAmount, StringFormat='{}{0:N2}'}" FontWeight="Bold" FontSize="16" Foreground="#27AE60"/>
+                            <Run Text=" грн" Foreground="#666666" FontWeight="SemiBold"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+    </Grid>
+</Page>

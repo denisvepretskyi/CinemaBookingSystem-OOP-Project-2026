@@ -1,0 +1,66 @@
+﻿using CinemaBookingSystem.Core.Data;
+using CinemaBookingSystem.Core.Models;
+using CinemaBookingSystem.Core.Services;
+using CinemaBookingSystem.UI.Windows;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace CinemaBookingSystem.UI.Pages
+{
+    /// <summary>
+    /// Логика взаимодействия для AdminMoviePage.xaml
+    /// </summary>
+    public partial class AdminMoviePage : Page
+    {
+        public AdminMoviePage()
+        {
+            InitializeComponent();
+            MoviesDataGrid.ItemsSource = AppData.Movies.GetAll().ToList();
+            Windows.MovieEditWindow.OnMovieAdded += LoadMovies;
+
+        }
+
+        private void LoadMovies()
+        {
+            MoviesDataGrid.ItemsSource = null; // Скидаємо прив'язку
+            MoviesDataGrid.ItemsSource = AppData.Movies.GetAll(); // Завантажуємо з бази
+        }
+
+        // 1. Обробник кнопки "Додати фільм" (під таблицею)
+        private void AddMovie_Click(object sender, RoutedEventArgs e)
+        {
+            MovieEditWindow window = new MovieEditWindow();
+            window.Show();
+ 
+        }
+
+        // 2. Обробник кнопки "Редагувати" (всередині DataGrid)
+        private void EditMovie_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.DataContext is Movie selectedMovie)
+            {
+                MovieEditWindow window = new MovieEditWindow(selectedMovie);
+                window.Show();
+            }
+        }
+
+        private void DeleteMovie_Click(object sender, RoutedEventArgs e)
+        {
+            // Логика для удаления фильма
+        }
+
+
+
+
+    }
+}

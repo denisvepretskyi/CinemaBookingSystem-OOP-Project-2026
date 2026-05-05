@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CinemaBookingSystem.UI": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\ЛАБЫ\\2 КУРС\\2\\ООП курсач\\CinemaBookingSystem-OOP-Project-2026\\CinemaBookingSystem\\CinemaBookingSystem.UI"
+    }
+  }
+}

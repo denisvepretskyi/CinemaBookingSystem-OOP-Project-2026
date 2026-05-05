@@ -1,0 +1,14 @@
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\CinemaBookingSystem.UI.pdb
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\Data\Cinemas.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\Data\Halls.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\Data\Movies.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\Data\Orders.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\Data\Sessions.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\Data\Users.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\D3DCompiler_47_cor3.dll
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\PenImc_cor3.dll
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\PresentationNative_cor3.dll
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\vcruntime140_cor3.dll
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\wpfgfx_cor3.dll
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\CinemaBookingSystem.Core.pdb
+C:\Users\denis\Desktop\курсач\CinemaBookingSystem\CinemaBookingSystem.UI.exe

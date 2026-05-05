@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "CinemaSpace - Центр",
+    "Address": "вул. Сумська, 25, Харків"
+  },
+  {
+    "Id": 2,
+    "Name": "SkyLine Cinema",
+    "Address": "пр. Науки, 45, Харків"
+  },
+  {
+    "Id": 3,
+    "Name": "Galaxy Movie Park",
+    "Address": "вул. Героїв Праці, 7, Харків"
+  },
+  {
+    "Id": 4,
+    "Name": "Retro Film House",
+    "Address": "вул. Полтавський Шлях, 12, Харків"
+  }
+]
