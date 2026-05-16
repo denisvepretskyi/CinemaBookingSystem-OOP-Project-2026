@@ -9,16 +9,16 @@ namespace CinemaBookingSystem.Core.Services
 {
     public class StatisticManager
     {
-        private readonly IJsonRepository<Order> _orderRepo;
-        private readonly IJsonRepository<Session> _sessionRepo;
-        private readonly IJsonRepository<Movie> _movieRepo;
-        private readonly IJsonRepository<Cinema> _cinemaRepo;
+        private readonly IRepository<Order> _orderRepo;
+        private readonly IRepository<Session> _sessionRepo;
+        private readonly IRepository<Movie> _movieRepo;
+        private readonly IRepository<Cinema> _cinemaRepo;
 
         public StatisticManager
-            (IJsonRepository<Order> orderRepo, 
-            IJsonRepository<Session> sessionRepo, 
-            IJsonRepository<Movie> movieRepo, 
-            IJsonRepository<Cinema> cinemaRepo)
+            (IRepository<Order> orderRepo, 
+            IRepository<Session> sessionRepo, 
+            IRepository<Movie> movieRepo, 
+            IRepository<Cinema> cinemaRepo)
         {
             _orderRepo = orderRepo;
             _sessionRepo = sessionRepo;

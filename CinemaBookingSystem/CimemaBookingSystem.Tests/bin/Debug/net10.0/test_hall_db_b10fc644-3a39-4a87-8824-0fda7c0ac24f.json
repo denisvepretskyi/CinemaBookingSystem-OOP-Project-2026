@@ -1,0 +1,9 @@
+[
+  {
+    "CinemaId": 1,
+    "Name": "Test Hall",
+    "RowCount": 5,
+    "ColumnCount": 5,
+    "Id": 1
+  }
+]

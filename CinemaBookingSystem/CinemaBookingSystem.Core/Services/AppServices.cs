@@ -33,5 +33,8 @@ namespace CinemaBookingSystem.Core.Services
             StatisticService = new StatisticManager(AppData.Orders, AppData.Sessions, AppData.Movies, AppData.Cinemas);
             HallService = new HallManager();
         }
+
+
+
     }
 }

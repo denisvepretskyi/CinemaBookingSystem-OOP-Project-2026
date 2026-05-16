@@ -19,15 +19,38 @@
                     <TextBlock Text="Особистий кабінет" FontFamily="Century Gothic" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
 
                     <TextBlock Text="Ім'я:" FontFamily="Century Gothic" FontSize="14" Margin="0,0,0,5"/>
-                    <TextBox x:Name="NameTextBox" Height="35" Margin="0,0,0,15" BorderThickness="0" Padding="10,5" Background="White" FontFamily="Century Gothic"/>
+                <TextBox x:Name="NameTextBox" Height="35" Margin="0,0,0,15" BorderThickness="0" Padding="10,5" Background="White" FontFamily="Century Gothic">
+                    <TextBox.ToolTip>
+                        <TextBlock FontSize="14" Text="Необов'язкове поле"/>
+                    </TextBox.ToolTip>
+                </TextBox>
 
-                    <TextBlock Text="Номер телефону:" FontFamily="Century Gothic" FontSize="14" Margin="0,0,0,5"/>
-                    <TextBox x:Name="PhoneTextBox" Height="35" Margin="0,0,0,15" BorderThickness="0" Padding="10,5" Background="White" FontFamily="Century Gothic"/>
+                <TextBlock Text="Номер телефону:" FontFamily="Century Gothic" FontSize="14" Margin="0,0,0,5"/>
+                <TextBox x:Name="PhoneTextBox" Height="35" Margin="0,0,0,15" BorderThickness="0" Padding="10,5" Background="White" FontFamily="Century Gothic">
+                    <TextBox.ToolTip>
+                        <TextBlock FontSize="14">
+                         <Run Text="Формат: "/>
+                         <Run Text="'+380(XX)XXXXXXX' або '0(XX)XXXXXXX'"/>
+                        </TextBlock>
+                    </TextBox.ToolTip>
+                </TextBox>
 
-                    <TextBlock Text="Пароль:" FontFamily="Century Gothic" FontSize="14" Margin="0,0,0,5"/>
-                    <PasswordBox x:Name="PasswordBox" Height="35" Margin="0,0,0,20" BorderThickness="0" Padding="10,5" Background="White"/>
+                <TextBlock Text="Пароль:" FontFamily="Century Gothic" FontSize="14" Margin="0,0,0,5"/>
+                <PasswordBox x:Name="PasswordBox" Height="35" Margin="0,0,0,20" BorderThickness="0" Padding="10,5" Background="White">
+                    <PasswordBox.ToolTip>
+                        <TextBlock FontSize="14">
+                    <Run Text="Щонайменшe 8 символів"/>
+                        <LineBreak/>
+                    <Run Text="Принаймні 1 велика літера"/>
+                        <LineBreak/>                       
+                    <Run Text="Принаймні 1 маленька літера"/> 
+                        <LineBreak/>
+                    <Run Text="Принаймні 1 цифра"/>
+                        </TextBlock>
+                    </PasswordBox.ToolTip>
+                </PasswordBox>
 
-                    <Grid>
+                <Grid>
                         <Button Grid.Column="0" x:Name="SaveButton" Content="Зберегти зміни" Height="40" Width="180" 
                 HorizontalAlignment="Left" Background="#4A69BD" Foreground="White" 
                 BorderThickness="0" Cursor="Hand" Click="SaveButton_Click">
@@ -106,27 +129,38 @@
                         <Run Text="{Binding Column}" FontWeight="Bold"/>
                                                     </TextBlock>
 
-                                                    <Button Grid.Column="4" Content="Повернути" 
-                            Height="35" Background="#FF676C7F" Foreground="White" 
-                            BorderThickness="0" Cursor="Hand" Click="ReturnTicket_Click">
-                                                        <Button.Template>
-                                                            <ControlTemplate TargetType="Button">
-                                                                <Border Background="{TemplateBinding Background}" CornerRadius="5">
-                                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                                </Border>
-                                                            </ControlTemplate>
-                                                        </Button.Template>
-                                                        <Button.Style>
-                                                            <Style TargetType="Button">
-                                                                <Style.Triggers>
-                                                                    <Trigger Property="IsMouseOver" Value="True">
-                                                                        <Setter Property="Background" Value="#FFD9534F"/>
-                                                                    </Trigger>
-                                                                </Style.Triggers>
-                                                            </Style>
-                                                        </Button.Style>
-                                                    </Button>
-                                                </Grid>
+                                                <Button Grid.Column="4" Content="Повернути" Height="35" 
+        Background="#FF676C7F" Foreground="White" BorderThickness="0" Cursor="Hand" 
+        Click="ReturnTicket_Click" 
+        IsEnabled="{Binding IsReturnable}"
+        ToolTipService.ShowOnDisabled="True">
+                                                    <Button.Template>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Button.Template>
+
+                                                    <Button.Style>
+                                                        <Style TargetType="Button">
+                                                            <Style.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter Property="Background" Value="#FFD9534F"/>
+                                                                </Trigger>
+
+                                                                <Trigger Property="IsEnabled" Value="False">
+                                                                    <Setter Property="Background" Value="#FF404452"/>
+                                                                    <Setter Property="Foreground" Value="#FFAAAAAA"/>
+                                                                    <Setter Property="Cursor" Value="Arrow"/>
+
+                                                                    <Setter Property="ToolTip" Value="Цей сеанс вже минув, квиток повернути неможливо."/>
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Button.Style>
+                                                </Button>
+                                            </Grid>
                                             </Border>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>

@@ -11,10 +11,10 @@ namespace CinemaBookingSystem.Core.Services
 {
     public class MovieManager
     {
-        private readonly IJsonRepository<Movie> _movieRepo;
-        private readonly IJsonRepository<Session> _sessionRepo;
+        private readonly IRepository<Movie> _movieRepo;
+        private readonly IRepository<Session> _sessionRepo;
 
-        public MovieManager(IJsonRepository<Movie> movieRepo, IJsonRepository<Session> sessionRepo)
+        public MovieManager(IRepository<Movie> movieRepo, IRepository<Session> sessionRepo)
         {
             _movieRepo = movieRepo;
             _sessionRepo = sessionRepo;

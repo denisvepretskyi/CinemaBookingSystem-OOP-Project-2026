@@ -26,7 +26,7 @@ namespace CinemaBookingSystem.UI.Pages
     {
 
 
-        private List<SeatItem> _displaySeats;
+        private List<SeatModel> _displaySeats;
         private Session _currentSession;
         public BookingPage(Session session)
         {
@@ -42,7 +42,7 @@ namespace CinemaBookingSystem.UI.Pages
             HallNameTextBlock.DataContext = hall;
             MovieTitleTextBlock.DataContext = movie;
 
-            _displaySeats = new List<SeatItem>();
+            _displaySeats = new List<SeatModel>();
 
             if (hall != null)
             {
@@ -50,14 +50,14 @@ namespace CinemaBookingSystem.UI.Pages
                 var allCoordinates = AppServices.HallService.GetAllSeatsCoordinates(hall);
                 var takenCoordinates = AppServices.BookingService.GetTakenSeats(_currentSession.Id);
 
-                List<SeatItem> displaySeats = new List<SeatItem>();
+                List<SeatModel> displaySeats = new List<SeatModel>();
 
                 foreach (var coord in allCoordinates)
                 {
                     bool isSeatOccupied = takenCoordinates.Contains(coord);
 
                     // Створюємо місце
-                    _displaySeats.Add(new SeatItem
+                    _displaySeats.Add(new SeatModel
                     {
                         Row = coord.Row,
                         Column = coord.Column,
@@ -75,7 +75,7 @@ namespace CinemaBookingSystem.UI.Pages
             Button clickedButton = sender as Button;
 
             // 2. Дістаємо об'єкт SeatItem, який прив'язаний до цієї кнопки
-            if (clickedButton != null && clickedButton.DataContext is SeatItem seat)
+            if (clickedButton != null && clickedButton.DataContext is SeatModel seat)
             {
                 seat.IsSelected = !seat.IsSelected;
                 bool hasSelectedSeats = _displaySeats.Any(s => s.IsSelected);

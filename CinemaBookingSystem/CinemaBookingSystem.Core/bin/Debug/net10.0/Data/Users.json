@@ -11,41 +11,13 @@
     "PhoneNumber": "admin",
     "Password": "admin",
     "Name": "",
-    "Id": 6
+    "Id": 2
   },
   {
     "$type": "customer",
-    "PhoneNumber": "0991112233",
+    "PhoneNumber": "0951112244",
     "Password": "12345678Aa",
-    "Name": "",
-    "Id": 7
-  },
-  {
-    "$type": "customer",
-    "PhoneNumber": "0501112233",
-    "Password": "12345678Aa",
-    "Name": "",
-    "Id": 8
-  },
-  {
-    "$type": "customer",
-    "PhoneNumber": "0931112233",
-    "Password": "12345678Aa",
-    "Name": "",
-    "Id": 9
-  },
-  {
-    "$type": "customer",
-    "PhoneNumber": "0001112233",
-    "Password": "12345678Aa",
-    "Name": "",
-    "Id": 10
-  },
-  {
-    "$type": "customer",
-    "PhoneNumber": "0990009999",
-    "Password": "12345678Aa",
-    "Name": "new user ",
-    "Id": 11
+    "Name": "name",
+    "Id": 3
   }
 ]

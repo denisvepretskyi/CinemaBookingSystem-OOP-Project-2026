@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\back.png" />
     <None Remove="Images\BackButton.png" />
     <None Remove="Images\Delete.png" />
     <None Remove="Images\FiltresButton.png" />
@@ -24,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\back.png" />
     <Resource Include="Images\BackButton.png" />
     <Resource Include="Images\Delete.png" />
     <Resource Include="Images\FiltresButton.png" />

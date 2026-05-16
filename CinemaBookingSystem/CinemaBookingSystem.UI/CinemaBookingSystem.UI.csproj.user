@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_LastSelectedProfileId>D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\Properties\PublishProfiles\FolderProfile1.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\Properties\PublishProfiles\FolderProfile2.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Pages\AdminMoviePage.xaml.cs">

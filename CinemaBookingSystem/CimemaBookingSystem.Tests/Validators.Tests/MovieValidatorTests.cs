@@ -15,12 +15,12 @@ namespace CimemaBookingSystem.Tests.Validators.Tests
         {
             // Arrange
             string title = "";
-            Genre genre = (Genre)1;
+            List<Genre> genres = new List<Genre>() { (Genre)1 };
             int duration = 120;
             string director = null;
             string description = null;
             // Act
-            var result = MovieValidator.IsValidMovie(title, description, duration, director, genre);
+            var result = MovieValidator.IsValidMovie(title, description, duration, director, genres);
             // Assert
             Assert.IsFalse(result.IsValid);
             Assert.AreEqual(result.Message, "Назва не може бути порожньою!");
@@ -31,12 +31,12 @@ namespace CimemaBookingSystem.Tests.Validators.Tests
         {
             // Arrange
             string title = "Valid Title";
-            Genre genre = (Genre)1;
+            List<Genre> genres = new List<Genre>() { (Genre)1 };
             int duration = -1;
             string director = null;
             string description = null;
             // Act
-            var result = MovieValidator.IsValidMovie(title, description, duration, director, genre);
+            var result = MovieValidator.IsValidMovie(title, description, duration, director, genres);
             // Assert
             Assert.IsFalse(result.IsValid);
             Assert.AreEqual(result.Message, "Тривалість має бути більшою за нуль!");
@@ -47,12 +47,13 @@ namespace CimemaBookingSystem.Tests.Validators.Tests
         {
             // Arrange
             string title = "Valid Title";
-            Genre genre = (Genre)50;
+
+            List<Genre> genres = new List<Genre>() { (Genre)50 };
             int duration = 120;
             string director = null;
             string description = null;
             // Act
-            var result = MovieValidator.IsValidMovie(title, description, duration, director, genre);
+            var result = MovieValidator.IsValidMovie(title, description, duration, director, genres);
             // Assert
             Assert.IsFalse(result.IsValid);
             Assert.AreEqual(result.Message, "Невірний жанр!");
@@ -63,12 +64,12 @@ namespace CimemaBookingSystem.Tests.Validators.Tests
         {
             // Arrange
             string title = "Valid Title";
-            Genre genre = (Genre)1;
+            List<Genre> genres = new List<Genre>() { (Genre)1 };
             int duration = 120;
             string director = null;
             string description = "little description";
             // Act
-            var result = MovieValidator.IsValidMovie(title, description, duration, director, genre);
+            var result = MovieValidator.IsValidMovie(title, description, duration, director, genres);
             // Assert
             Assert.IsFalse(result.IsValid);
             Assert.AreEqual(result.Message, "Опис має бути від 100 до 1000 символів!");
@@ -79,12 +80,12 @@ namespace CimemaBookingSystem.Tests.Validators.Tests
         {
             // Arrange
             string title = "Valid Title";
-            Genre genre = (Genre)1;
+            List<Genre> genres = new List<Genre>() { (Genre)1 };
             int duration = 120;
             string director = new string('a', 101);
             string description = null;
             // Act
-            var result = MovieValidator.IsValidMovie(title, description, duration, director, genre);
+            var result = MovieValidator.IsValidMovie(title, description, duration, director, genres);
             // Assert
             Assert.IsFalse(result.IsValid);
             Assert.AreEqual(result.Message, "Ім'я режисера не може перевищувати 100 символів!");
@@ -96,12 +97,12 @@ namespace CimemaBookingSystem.Tests.Validators.Tests
         {
             // Arrange
             string title = "Valid Title";
-            Genre genre = (Genre)1;
+            List<Genre> genres = new List<Genre>() { (Genre)1 };
             int duration = 120;
             string director = new string('a', 50);
             string description = null;
             // Act
-            var result = MovieValidator.IsValidMovie(title, description, duration, director, genre);
+            var result = MovieValidator.IsValidMovie(title, description, duration, director, genres);
             // Assert
             Assert.IsTrue(result.IsValid);
             Assert.AreEqual(result.Message, string.Empty);

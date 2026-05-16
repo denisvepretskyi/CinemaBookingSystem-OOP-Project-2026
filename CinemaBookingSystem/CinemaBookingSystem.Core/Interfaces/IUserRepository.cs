@@ -5,7 +5,7 @@ using CinemaBookingSystem.Core.Models;
 
 namespace CinemaBookingSystem.Core.Interfaces
 {
-    public interface IUserRepository : IJsonRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
         User GetByPhone(string phoneNumber);
         bool IsPhoneExists(string phoneNumber);

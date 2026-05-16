@@ -11,13 +11,13 @@ namespace CinemaBookingSystem.Core.Services
     public class BookingManager
     {
         private IOrderRepository _orderRepo;
-        private IJsonRepository<Session> _sessionRepo;
-        private IJsonRepository<Hall> _hallRepo;
+        private IRepository<Session> _sessionRepo;
+        private IRepository<Hall> _hallRepo;
         private IUserRepository _userRepo;
         public BookingManager
             (IOrderRepository orderRepo, 
-            IJsonRepository<Session> sessionRepo,
-            IJsonRepository<Hall> hallRepo,
+            IRepository<Session> sessionRepo,
+            IRepository<Hall> hallRepo,
             IUserRepository userRepo)
         {
             _orderRepo = orderRepo;

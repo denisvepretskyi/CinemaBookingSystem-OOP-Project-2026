@@ -8,10 +8,10 @@ namespace CinemaBookingSystem.Core.Services
 {
     public class CinemaCatalogManager
     {
-        private readonly IJsonRepository<Cinema> _cinemaRepo;
-        private readonly IJsonRepository<Hall> _hallRepo; 
+        private readonly IRepository<Cinema> _cinemaRepo;
+        private readonly IRepository<Hall> _hallRepo; 
 
-        public CinemaCatalogManager(IJsonRepository<Cinema> cinemaRepo, IJsonRepository<Hall> hallRepo)
+        public CinemaCatalogManager(IRepository<Cinema> cinemaRepo, IRepository<Hall> hallRepo)
         {
             _cinemaRepo = cinemaRepo;
             _hallRepo = hallRepo;

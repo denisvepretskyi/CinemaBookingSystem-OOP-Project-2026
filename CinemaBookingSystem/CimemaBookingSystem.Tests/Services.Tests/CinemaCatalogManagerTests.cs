@@ -14,8 +14,8 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         private string _cinemaFilePath = $"test_cinema_db_{Guid.NewGuid()}.json";
         private string _hallFilePath = $"test_hall_db_{Guid.NewGuid()}.json";
 
-        private IJsonRepository<Cinema> _testCinemaRepo;
-        private IJsonRepository<Hall> _testHallRepo;
+        private IRepository<Cinema> _testCinemaRepo;
+        private IRepository<Hall> _testHallRepo;
         private CinemaCatalogManager _cinemaCatalogManager;
 
         [TestInitialize]

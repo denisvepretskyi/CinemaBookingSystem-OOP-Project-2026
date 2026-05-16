@@ -9,11 +9,11 @@ namespace CinemaBookingSystem.Core.Validators
 {
     public class SessionValidator
     {
-        private readonly IJsonRepository<Movie> _movieRepo;
-        private readonly IJsonRepository<Session> _sessionRepo;
+        private readonly IRepository<Movie> _movieRepo;
+        private readonly IRepository<Session> _sessionRepo;
         private readonly IOrderRepository _orderRepo;
 
-        public SessionValidator(IJsonRepository<Movie> movieRepo, IJsonRepository<Session> sessionRepo, IOrderRepository orderRepo)
+        public SessionValidator(IRepository<Movie> movieRepo, IRepository<Session> sessionRepo, IOrderRepository orderRepo)
         {
             _movieRepo = movieRepo;
             _sessionRepo = sessionRepo;
@@ -55,7 +55,7 @@ namespace CinemaBookingSystem.Core.Validators
             return (false, "");
         }
 
-        private (bool IsValid, string Message) IsTicketsSold(int sessionId)
+        public (bool IsValid, string Message) IsTicketsSold(int sessionId)
         {
             var allOrders = _orderRepo.GetAll();
             var hasSoldTicket = allOrders
@@ -63,7 +63,7 @@ namespace CinemaBookingSystem.Core.Validators
                 .Any(ticket => ticket.SessionId == sessionId); 
 
             if (hasSoldTicket)            
-                return (true, "Неможливо видалити сеанс, оскільки на нього продано квитки!");          
+                return (true, "Неможливо редагувати/видалити сеанс, оскільки на нього продано квитки!");          
 
             return (false, "");
         }

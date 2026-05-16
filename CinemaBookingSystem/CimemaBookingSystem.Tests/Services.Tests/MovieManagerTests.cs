@@ -14,8 +14,8 @@ namespace CimemaBookingSystem.Tests.Services.Tests
     {
         private string _sessionFilePath = $"test_session_db_{Guid.NewGuid()}.json";
         private string _movieFilePath = $"test_movie_db_{Guid.NewGuid()}.json";
-        private IJsonRepository<Session> _testSessionRepo;
-        private IJsonRepository<Movie> _testMovieRepo;
+        private IRepository<Session> _testSessionRepo;
+        private IRepository<Movie> _testMovieRepo;
         private MovieManager _movieManager;
 
         [TestInitialize]
@@ -40,8 +40,9 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         public void AddMovie_Success_Test()
         {
             //Arrange
+            List<Genre> genres = new List<Genre>() { Genre.Бойовик };
             //Act
-            var result = _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", Genre.Бойовик);
+            var result = _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", genres, "url");
             //Assert
             Assert.IsTrue(result.isValid);
         }
@@ -50,8 +51,9 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         public void AddMovie_NotValidData_Test()
         {
             //Arrange
+            List<Genre> genres = new List<Genre>() { Genre.Бойовик };
             //Act
-            var result = _movieManager.AddMovie("", new string('a', 101), 120, "director", Genre.Бойовик);
+            var result = _movieManager.AddMovie("", new string('a', 101), 120, "director", genres, "url");
             //Assert
             Assert.IsFalse(result.isValid);
         }
@@ -61,9 +63,11 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         public void EditMovie_Success_Test()
         {
             //Arrange
-            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", Genre.Бойовик);
+            List<Genre> genres = new List<Genre>() { Genre.Бойовик };
+            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", genres, "url");
+            
             //Act
-            _movieManager.EditMovie(1, "edit movie", new string('a', 101), 120, "director", Genre.Бойовик);
+            _movieManager.EditMovie(1, "edit movie", new string('a', 101), 120, "director", genres, "url");
             var movie = _testMovieRepo.GetById(1);
             //Assert
             Assert.AreEqual(movie.Title, "edit movie");
@@ -73,9 +77,11 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         public void EditMovie_NotValidData_Test()
         {
             //Arrange
-            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", Genre.Бойовик);
+            List<Genre> genres = new List<Genre>() { Genre.Бойовик };
+            List<Genre> editGenres = new List<Genre>() { Genre.Бойовик, (Genre)50 };
+            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", genres, "url");
             //Act
-            var result = _movieManager.EditMovie(1, "edit movie", new string('a', 101), 120, "director", (Genre)50);
+            var result = _movieManager.EditMovie(1, "edit movie", new string('a', 101), 120, "director", editGenres, "url");
             var movie = _testMovieRepo.GetById(1);
             //Assert
             Assert.IsFalse(result.isValid);
@@ -86,7 +92,8 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         public void DeleteMovie_Success_Test()
         {
             //Arrange
-            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", Genre.Бойовик);
+            List<Genre> genres = new List<Genre>() { Genre.Бойовик };
+            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", genres, "url");
             //Act
             _movieManager.DeleteMovie(1);
             var movies =_testMovieRepo.GetAll().ToList();
@@ -98,7 +105,8 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         public void DeleteMovie_SessionExists_Test()
         {
             //Arrange
-            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", Genre.Бойовик);
+            List<Genre> genres = new List<Genre>() { Genre.Бойовик };
+            _movieManager.AddMovie("new movie", new string('a', 101), 120, "director", genres, "url");
             Session testSession = new Session()
             {
                 Id = 1,

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CinemaBookingSystem.Core.Interfaces
 {
-    public interface IOrderRepository : IJsonRepository<Order>
+    public interface IOrderRepository : IRepository<Order>
     {
         public List<Order> GetByUserId(int userId);
     }

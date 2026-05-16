@@ -415,7 +415,6 @@ D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-202
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\ProfilePage.g.cs
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\RegisterPage.g.cs
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\SelectCinemaPage.g.cs
-D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\AuthWindow.g.cs
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\MainWindow.g.cs
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\App.g.cs
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\CinemaBookingSystem.UI_MarkupCompile.cache
@@ -429,7 +428,6 @@ D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-202
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\ProfilePage.baml
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\RegisterPage.baml
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\SelectCinemaPage.baml
-D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\AuthWindow.baml
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\MainWindow.baml
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\CinemaBookingSystem.UI.g.resources
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\CinemaBookingSystem.UI.GeneratedMSBuildEditorConfig.editorconfig
@@ -443,3 +441,15 @@ D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-202
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\CinemaBookingSystem.UI.pdb
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\CinemaBookingSystem.UI.genruntimeconfig.cache
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\ref\CinemaBookingSystem.UI.dll
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\AdminMoviePage.baml
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\AdminSessionPage.baml
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\AdminWindow.baml
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\MovieEditWindow.baml
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\SessionEditWindow.baml
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\AdminMoviePage.g.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\AdminSessionPage.g.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\AdminStatisticPage.g.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\AdminWindow.g.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\MovieEditWindow.g.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Windows\SessionEditWindow.g.cs
+D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\obj\Release\net10.0-windows\win-x64\Pages\AdminStatisticPage.baml

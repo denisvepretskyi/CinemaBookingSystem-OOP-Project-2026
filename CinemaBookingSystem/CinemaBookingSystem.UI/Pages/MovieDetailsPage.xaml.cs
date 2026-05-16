@@ -1,6 +1,7 @@
 ﻿using CinemaBookingSystem.Core.Data;
 using CinemaBookingSystem.Core.Models;
 using CinemaBookingSystem.Core.Services;
+using CinemaBookingSystem.UI.Windows;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,7 +29,12 @@ namespace CinemaBookingSystem.UI.Pages
             _currentMovie = movie;
             DataContext = _currentMovie;
             cinemaNane.DataContext = cinema;
-            List<Session> sessions = AppData.Sessions.GetAll().Where(s => s.CinemaId == cinema.Id).Where(s => s.MovieId == movie.Id).ToList();          
+            List<Session> sessions = AppData.Sessions.GetAll().
+                Where(s => s.CinemaId == cinema.Id).
+                Where(s => s.MovieId == movie.Id).
+                Where(s => s.StartTime > DateTime.Now).
+                ToList();
+            sessions.Sort();
             SessionGrid.ItemsSource = sessions;
             if (_currentMovie.Genres != null && _currentMovie.Genres.Count > 0)            
                 GenresText.Text = string.Join(", ", _currentMovie.Genres).TrimEnd(',', ' ');            
@@ -40,15 +46,15 @@ namespace CinemaBookingSystem.UI.Pages
         {
             Button clickedButton = sender as Button;
 
-
-            if (clickedButton != null && clickedButton.DataContext is Session selectedSession)
+            if (Window.GetWindow(this) is MainWindow mainWindow)
+                if (clickedButton != null && clickedButton.DataContext is Session selectedSession)
             {
                 if (AppServices.AuthorizationService.currentUser == null)
-                { 
-                    NavigationService.Navigate(new BookingPageForGuest(selectedSession));
+                {                   
+                    mainWindow.MainFrame.Navigate(new BookingPageForGuest(selectedSession));
                     return;
-                }
-                NavigationService.Navigate(new BookingPage(selectedSession));
+                }               
+                mainWindow.MainFrame.Navigate(new BookingPage(selectedSession));
             }
         }
     }

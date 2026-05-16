@@ -18,12 +18,12 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         private string _hallFilePath = $"test_hall_db_{Guid.NewGuid()}.json";
         private string _sessionFilePath = $"test_session_db_{Guid.NewGuid()}.json";
         private string _orderFilePath = $"test_order_db_{Guid.NewGuid()}.json";
-        private IJsonRepository<Movie> _testMovieRepo;
-        private IJsonRepository<Session> _testSessionRepo;
+        private IRepository<Movie> _testMovieRepo;
+        private IRepository<Session> _testSessionRepo;
         private IOrderRepository _testOrderRepo;
         private SessionValidator _testSessionValidator;
-        private IJsonRepository<Cinema> _testCinemaRepo;
-        private IJsonRepository<Hall> _testHallRepo;
+        private IRepository<Cinema> _testCinemaRepo;
+        private IRepository<Hall> _testHallRepo;
         private SessionManager _testSessionManager;
         [TestInitialize]
         public void Setup()

@@ -1,0 +1,13 @@
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\Data\Cinemas.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\Data\Halls.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\Data\Movies.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\Data\Orders.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\Data\Sessions.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\Data\Users.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\CinemaBookingSystem.UI.exe
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\CinemaBookingSystem.UI.dll
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\CinemaBookingSystem.UI.deps.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\CinemaBookingSystem.UI.runtimeconfig.json
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\CinemaBookingSystem.UI.pdb
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\CinemaBookingSystem.Core.dll
+C:\Users\denis\Desktop\курсач\CinemaBookingSystemADMIN\CinemaBookingSystem.Core.pdb

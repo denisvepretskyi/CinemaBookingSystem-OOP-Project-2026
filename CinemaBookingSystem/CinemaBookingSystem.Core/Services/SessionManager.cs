@@ -9,18 +9,18 @@ namespace CinemaBookingSystem.Core.Services
 {
     public class SessionManager
     {
-        private readonly IJsonRepository<Session> _sessionRepo;
-        private readonly IJsonRepository<Movie> _movieRepo;
-        private readonly IJsonRepository<Cinema> _cinemaRepo;
-        private readonly IJsonRepository<Hall> _hallRepo;
+        private readonly IRepository<Session> _sessionRepo;
+        private readonly IRepository<Movie> _movieRepo;
+        private readonly IRepository<Cinema> _cinemaRepo;
+        private readonly IRepository<Hall> _hallRepo;
         private readonly SessionValidator _sessionValidator;
 
         public SessionManager
-            (IJsonRepository<Session> sessionRepo, 
+            (IRepository<Session> sessionRepo, 
             SessionValidator sessionValidator,
-            IJsonRepository<Movie> movieRepo,
-            IJsonRepository<Cinema> cinemaRepo,
-            IJsonRepository<Hall> hallRepo)
+            IRepository<Movie> movieRepo,
+            IRepository<Cinema> cinemaRepo,
+            IRepository<Hall> hallRepo)
         {
             _sessionRepo = sessionRepo;
             _sessionValidator = sessionValidator;

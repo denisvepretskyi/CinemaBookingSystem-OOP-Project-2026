@@ -18,8 +18,8 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         private string _userFilePath = $"test_user_db_{Guid.NewGuid()}.json";
 
         private IOrderRepository _testOrderRepo;
-        private IJsonRepository<Session> _testSessionRepo;
-        private IJsonRepository<Hall> _testHallRepo;
+        private IRepository<Session> _testSessionRepo;
+        private IRepository<Hall> _testHallRepo;
         private IUserRepository _testUserRepo;
         private BookingManager _bookingManager;
 
@@ -197,7 +197,7 @@ namespace CimemaBookingSystem.Tests.Services.Tests
             _testSessionRepo.Add(testSession);
             _bookingManager.CreateOrder(1, 3, new List<(short, short)> { (1, 1), (1, 2) });
             //Act
-            var result = _bookingManager.ReturnTicket(1, 1, 1);
+            var result = _bookingManager.ReturnTicket(1, 1);
             //Assert
             Assert.IsFalse(result.IsSuccess);
         }
@@ -208,7 +208,7 @@ namespace CimemaBookingSystem.Tests.Services.Tests
             //Arrange         
             _bookingManager.CreateOrder(1, 1, new List<(short, short)> { (1, 1), (1, 2) });
             //Act
-            var result = _bookingManager.ReturnTicket(1, 1, 1);
+            var result = _bookingManager.ReturnTicket(1, 1);
             //Assert
             Assert.IsTrue(result.IsSuccess);
         }

@@ -18,10 +18,10 @@ namespace CimemaBookingSystem.Tests.Validators.Tests
         private string _hallFilePath = $"test_hall_db_{Guid.NewGuid()}.json";
         private string _userFilePath = $"test_user_db_{Guid.NewGuid()}.json";
 
-        private  IJsonRepository<Movie> _testMovieRepo;
-        private  IJsonRepository<Session> _testSessionRepo;
+        private  IRepository<Movie> _testMovieRepo;
+        private  IRepository<Session> _testSessionRepo;
         private  IOrderRepository _testOrderRepo;
-        private IJsonRepository<Hall> _testHallRepo;
+        private IRepository<Hall> _testHallRepo;
         private IUserRepository _testUserRepo;
         private SessionValidator _testSessionValidator;
         private BookingManager _bookingManager;

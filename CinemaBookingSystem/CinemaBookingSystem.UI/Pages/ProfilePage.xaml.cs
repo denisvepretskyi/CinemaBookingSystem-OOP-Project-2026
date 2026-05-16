@@ -46,7 +46,7 @@ namespace CinemaBookingSystem.UI.Pages
         {
             List<Order> orders = new List<Order>();
             List<Ticket> tickets = new List<Ticket>();
-            List<TicketDisplayModel> ticketDisplayItems = new List<TicketDisplayModel>();
+            List<TicketModel> ticketDisplayItems = new List<TicketModel>();
 
             if (AppServices.AuthorizationService.currentUser != null)
             {
@@ -54,7 +54,7 @@ namespace CinemaBookingSystem.UI.Pages
                 tickets = orders.SelectMany(o => o.Tickets).ToList();
                 foreach (Ticket ticket in tickets)
                 {
-                    TicketDisplayModel displayTicket = new TicketDisplayModel()
+                    TicketModel displayTicket = new TicketModel()
                     {
                         Id = ticket.Id,
                         OrderId = ticket.OrderId,
@@ -64,10 +64,43 @@ namespace CinemaBookingSystem.UI.Pages
                         CinemaName = AppData.Cinemas.GetById(AppData.Sessions.GetById(ticket.SessionId).CinemaId).Name,
                         StartTime = AppData.Sessions.GetById(ticket.SessionId).StartTime
                     };
-                    ticketDisplayItems.Add(displayTicket);                    
+                    ticketDisplayItems.Add(displayTicket);
                 }
-            }TicketsItemsControl.ItemsSource = ticketDisplayItems;
+            }
+            TicketsItemsControl.ItemsSource = ticketDisplayItems;
         }
+
+
+
+        //private void LoadDisplayTickets()
+        //{
+        //    List<Order> orders = new List<Order>();
+        //    List<Ticket> tickets = new List<Ticket>();
+        //    List<TicketModel> ticketDisplayItems = new List<TicketModel>();
+
+        //    if (AppServices.AuthorizationService.currentUser is Customer customer)
+        //    {
+        
+        //            orders = customer.Orders;
+        //            tickets = orders.SelectMany(o => o.Tickets).ToList();
+        //            foreach (Ticket ticket in tickets)
+        //            {
+        //                TicketModel displayTicket = new TicketModel()
+        //                {
+        //                    Id = ticket.Id,
+        //                    OrderId = ticket.OrderId,
+        //                    Row = ticket.Row,
+        //                    Column = ticket.Column,
+        //                    MovieTitle = AppData.Movies.GetById(AppData.Sessions.GetById(ticket.SessionId).MovieId).Title,
+        //                    CinemaName = AppData.Cinemas.GetById(AppData.Sessions.GetById(ticket.SessionId).CinemaId).Name,
+        //                    StartTime = AppData.Sessions.GetById(ticket.SessionId).StartTime
+        //                };
+        //                ticketDisplayItems.Add(displayTicket);
+        //            }                    
+        //    }
+        //    TicketsItemsControl.ItemsSource = ticketDisplayItems;
+        //}
+
 
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -94,7 +127,7 @@ namespace CinemaBookingSystem.UI.Pages
 
         public void ReturnTicket_Click(object sender, EventArgs e)
         {
-            if (sender is Button button && button.DataContext is TicketDisplayModel ticket)
+            if (sender is Button button && button.DataContext is TicketModel ticket)
             {
                 var result = AppServices.BookingService.ReturnTicket(ticket.OrderId, ticket.Id);
                 if (result.IsSuccess)

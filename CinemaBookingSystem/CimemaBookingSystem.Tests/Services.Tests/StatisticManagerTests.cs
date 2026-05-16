@@ -20,10 +20,10 @@ namespace CimemaBookingSystem.Tests.Services.Tests
         private string _userFilePath = $"test_user_db_{Guid.NewGuid()}.json";
 
         private IOrderRepository _orderRepo;
-        private IJsonRepository<Session> _sessionRepo;
-        private IJsonRepository<Movie> _movieRepo;
-        private IJsonRepository<Cinema> _cinemaRepo;
-        private IJsonRepository<Hall> _hallRepo;
+        private IRepository<Session> _sessionRepo;
+        private IRepository<Movie> _movieRepo;
+        private IRepository<Cinema> _cinemaRepo;
+        private IRepository<Hall> _hallRepo;
         private IUserRepository _userRepo;
 
         private StatisticManager _statisticManager;

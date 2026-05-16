@@ -19,8 +19,8 @@ namespace CimemaBookingSystem.Tests.Repositories.Tests
 
         private IOrderRepository _testOrderRepo;
         private IUserRepository _testUserRepo;
-        private IJsonRepository<Session> _testSessionRepo;
-        private IJsonRepository<Hall> _testHallRepo;
+        private IRepository<Session> _testSessionRepo;
+        private IRepository<Hall> _testHallRepo;
         private AuthorizationManager _authorizationManager;
         private BookingManager _bookingManager;
                 

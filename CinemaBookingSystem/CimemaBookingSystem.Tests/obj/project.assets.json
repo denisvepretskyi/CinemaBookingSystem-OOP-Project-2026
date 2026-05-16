@@ -2291,7 +2291,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\denis\\.nuget\\packages\\": {}
+    "C:\\Users\\denis\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2302,8 +2303,12 @@
       "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
       "outputPath": "D:\\ЛАБЫ\\2 КУРС\\2\\ООП курсач\\CinemaBookingSystem-OOP-Project-2026\\CinemaBookingSystem\\CimemaBookingSystem.Tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -2,36 +2,15 @@
   {
     "$type": "customer",
     "PhoneNumber": "0954095540",
-    "Password": "Veperdenden207",
+    "Password": "Fifine07",
     "Name": "\u0414\u0435\u043D\u0438\u0441 \u0404\u0432\u0433\u0435\u043D\u043E\u0432\u0438\u0447",
     "Id": 1
   },
   {
-    "$type": "customer",
-    "PhoneNumber": "\u002B380508895613",
-    "Password": "40352010Ad",
-    "Name": "\u041C\u0430\u0440\u0456\u044F",
+    "$type": "admin",
+    "PhoneNumber": "admin",
+    "Password": "admin",
+    "Name": "",
     "Id": 2
-  },
-  {
-    "$type": "customer",
-    "PhoneNumber": "0954093322",
-    "Password": "12345678Aa",
-    "Name": "",
-    "Id": 3
-  },
-  {
-    "$type": "customer",
-    "PhoneNumber": "0991112233",
-    "Password": "12345678Aa",
-    "Name": "",
-    "Id": 4
-  },
-  {
-    "$type": "customer",
-    "PhoneNumber": "0998887766",
-    "Password": "12345678Aa",
-    "Name": "",
-    "Id": 5
   }
 ]

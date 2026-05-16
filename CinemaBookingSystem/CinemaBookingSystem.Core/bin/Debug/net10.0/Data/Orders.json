@@ -3,104 +3,64 @@
     "UserId": 1,
     "Tickets": [
       {
-        "SessionId": 33,
-        "Row": 1,
-        "Column": 2,
-        "Price": 150.00,
-        "OrderId": 2,
-        "Id": 2
-      },
-      {
-        "SessionId": 33,
-        "Row": 1,
-        "Column": 3,
-        "Price": 150.00,
-        "OrderId": 2,
-        "Id": 3
-      },
-      {
-        "SessionId": 33,
+        "SessionId": 15,
         "Row": 2,
-        "Column": 3,
-        "Price": 150.00,
+        "Column": 7,
+        "Price": 180.00,
         "OrderId": 2,
-        "Id": 4
+        "Id": 5
+      },
+      {
+        "SessionId": 15,
+        "Row": 4,
+        "Column": 13,
+        "Price": 180.00,
+        "OrderId": 2,
+        "Id": 6
       }
     ],
-    "TotalPrice": 450.00,
-    "Date": "2026-05-05T11:23:42.037065+03:00",
+    "TotalPrice": 360.00,
+    "Date": "2026-05-16T12:34:08.2047385+03:00",
     "Id": 2
   },
   {
     "UserId": 1,
     "Tickets": [
       {
-        "SessionId": 12,
-        "Row": 2,
+        "SessionId": 44,
+        "Row": 1,
         "Column": 1,
-        "Price": 170.00,
-        "OrderId": 4,
+        "Price": 100.00,
+        "OrderId": 3,
         "Id": 7
       },
       {
-        "SessionId": 12,
-        "Row": 2,
+        "SessionId": 44,
+        "Row": 1,
         "Column": 2,
-        "Price": 170.00,
-        "OrderId": 4,
+        "Price": 100.00,
+        "OrderId": 3,
         "Id": 8
       },
       {
-        "SessionId": 12,
-        "Row": 2,
+        "SessionId": 44,
+        "Row": 1,
         "Column": 3,
-        "Price": 170.00,
-        "OrderId": 4,
+        "Price": 100.00,
+        "OrderId": 3,
         "Id": 9
       },
       {
-        "SessionId": 12,
-        "Row": 2,
+        "SessionId": 44,
+        "Row": 1,
         "Column": 4,
-        "Price": 170.00,
-        "OrderId": 4,
+        "Price": 100.00,
+        "OrderId": 3,
         "Id": 10
       }
     ],
-    "TotalPrice": 680.00,
-    "Date": "2026-05-05T11:24:04.8831822+03:00",
-    "Id": 4
-  },
-  {
-    "UserId": 11,
-    "Tickets": [
-      {
-        "SessionId": 42,
-        "Row": 1,
-        "Column": 1,
-        "Price": 160.00,
-        "OrderId": 5,
-        "Id": 11
-      }
-    ],
-    "TotalPrice": 160.00,
-    "Date": "2026-05-05T17:22:08.5230932+03:00",
-    "Id": 5
-  },
-  {
-    "UserId": 1,
-    "Tickets": [
-      {
-        "SessionId": 4,
-        "Row": 1,
-        "Column": 1,
-        "Price": 200.00,
-        "OrderId": 6,
-        "Id": 12
-      }
-    ],
-    "TotalPrice": 200.00,
-    "Date": "2026-05-05T18:08:15.7248878+03:00",
-    "Id": 6
+    "TotalPrice": 400.00,
+    "Date": "2026-05-16T12:37:35.1747716+03:00",
+    "Id": 3
   }
 ]

@@ -46,9 +46,17 @@ namespace CinemaBookingSystem.UI.Pages
         {
             if (sender is Button button && button.DataContext is Session selectedSession)
             {
-                SessionEditWindow window = new SessionEditWindow(selectedSession);
-                window.ShowDialog();
-                LoadSession();
+                var TryEdit = AppServices.SessionValidator.IsTicketsSold(selectedSession.Id);
+                if (TryEdit.IsValid)
+                {
+                    MessageBox.Show($"Помилка при редагуванні сеансу: {TryEdit.Message}", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    SessionEditWindow window = new SessionEditWindow(selectedSession);
+                    window.ShowDialog();
+                    LoadSession();
+                }
             }
         }
 

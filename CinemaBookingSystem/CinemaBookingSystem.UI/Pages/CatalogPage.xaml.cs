@@ -3,6 +3,7 @@ using CinemaBookingSystem.Core.Interfaces;
 using CinemaBookingSystem.Core.Models;
 using CinemaBookingSystem.Core.Repositories;
 using CinemaBookingSystem.Core.Services;
+using CinemaBookingSystem.UI.Windows;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,7 +32,9 @@ namespace CinemaBookingSystem.UI.Pages
         {
             InitializeComponent();
             _currentCinema = currentCinema;
-            List<Session> cinemaSessions = AppData.Sessions.GetAll().Where(session => session.CinemaId == currentCinema.Id).ToList();
+            List<Session> cinemaSessions = AppData.Sessions.GetAll().
+                Where(session => session.CinemaId == currentCinema.Id).
+                Where(session => session.StartTime > DateTime.Now).ToList();
             var movieIds = cinemaSessions.Select(session => session.MovieId).Distinct().ToList();
             _availableMovies = AppData.Movies.GetAll().Where(movie => movieIds.Contains(movie.Id)).ToList();
             MoviesGrid.ItemsSource = _availableMovies;
@@ -72,7 +75,10 @@ namespace CinemaBookingSystem.UI.Pages
             // Дістаємо з DataContext фільм
             if (clickedButton != null && clickedButton.DataContext is Movie clickedMovie)
             {
-                NavigationService.Navigate(new MovieDetailsPage(clickedMovie, _currentCinema));
+                if (Window.GetWindow(this) is MainWindow mainWindow)
+                {
+                    mainWindow.MainFrame.Navigate(new MovieDetailsPage(clickedMovie, _currentCinema));
+                }
             }
         }
 

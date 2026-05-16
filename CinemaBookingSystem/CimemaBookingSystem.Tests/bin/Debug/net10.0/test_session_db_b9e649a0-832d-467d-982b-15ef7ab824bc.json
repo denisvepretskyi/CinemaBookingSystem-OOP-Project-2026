@@ -1,0 +1,12 @@
+[
+  {
+    "HallId": 1,
+    "CinemaId": 1,
+    "CinemaName": null,
+    "MovieId": 1,
+    "MovieTitle": null,
+    "StartTime": "2026-05-05T20:47:54.0011741+03:00",
+    "Price": 0,
+    "Id": 1
+  }
+]

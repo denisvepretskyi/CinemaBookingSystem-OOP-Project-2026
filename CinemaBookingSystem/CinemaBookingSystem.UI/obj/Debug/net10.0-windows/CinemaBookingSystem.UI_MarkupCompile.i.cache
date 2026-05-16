@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_O
 D:\ЛАБЫ\2 КУРС\2\ООП курсач\CinemaBookingSystem-OOP-Project-2026\CinemaBookingSystem\CinemaBookingSystem.UI\App.xaml
 15110155104
 
-232066882544
+231857728197
 207-675007374
 Pages\AdminMoviePage.xaml;Pages\AdminSessionPage.xaml;Pages\AdminStatisticPage.xaml;Pages\BookingPage.xaml;Pages\BookingPageForGuest.xaml;Pages\CatalogPage.xaml;Pages\LoginPage.xaml;Pages\MovieDetailsPage.xaml;Pages\ProfilePage.xaml;Pages\RegisterPage.xaml;Pages\SelectCinemaPage.xaml;Windows\AdminWindow.xaml;Windows\MainWindow.xaml;Windows\MovieEditWindow.xaml;Windows\SessionEditWindow.xaml;
 
-True
+False
 
