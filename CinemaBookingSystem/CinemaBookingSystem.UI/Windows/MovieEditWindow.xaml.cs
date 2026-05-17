@@ -58,11 +58,10 @@ namespace CinemaBookingSystem.UI.Windows
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if(CurrentMovie == null)
-            {
-
-                int.TryParse(DurationTextBox.Text, out int duration);
-
+            int duration = 0;
+            int.TryParse(DurationTextBox.Text, out duration);
+            if (CurrentMovie == null)
+            { 
                 var TryAdd = AppServices.MovieService.AddMovie(
                     TitleTextBox.Text,
                     DescriptionTextBox.Text,
@@ -89,7 +88,7 @@ namespace CinemaBookingSystem.UI.Windows
                     CurrentMovie.Id,
                     TitleTextBox.Text,
                     DescriptionTextBox.Text,
-                    int.Parse(DurationTextBox.Text),
+                    duration,
                     DirectorTextBox.Text,
                     new List<Genre>(GenresListBox.SelectedItems.Cast<Genre>()),
                     PosterPathTextBox.Text

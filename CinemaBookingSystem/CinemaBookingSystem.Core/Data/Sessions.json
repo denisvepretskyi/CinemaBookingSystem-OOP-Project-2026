@@ -405,7 +405,7 @@
     "CinemaName": "Retro Film House",
     "MovieId": 8,
     "MovieTitle": "\u0412\u043E\u043D\u043E (It)",
-    "StartTime": "2027-04-30T20:15:00",
+    "StartTime": "2027-04-30T20:00:00",
     "Price": 170.00,
     "Id": 43
   },
@@ -418,5 +418,15 @@
     "StartTime": "2026-05-16T12:40:00",
     "Price": 100.00,
     "Id": 44
+  },
+  {
+    "HallId": 1,
+    "CinemaId": 1,
+    "CinemaName": "CinemaSpace - \u0426\u0435\u043D\u0442\u0440",
+    "MovieId": 14,
+    "MovieTitle": "\u0422\u043E\u0439, \u0445\u0442\u043E \u0431\u0456\u0436\u0438\u0442\u044C \u043F\u043E \u043B\u0435\u0437\u0443 2049",
+    "StartTime": "2026-05-17T18:00:00",
+    "Price": 200,
+    "Id": 45
   }
 ]

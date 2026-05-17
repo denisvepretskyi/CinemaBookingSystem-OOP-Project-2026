@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaBookingSystem.UI.Windows;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,7 +21,9 @@ namespace CinemaBookingSystem.UI.Pages
     {
         public SelectCinemaPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            if(Window.GetWindow(this) is MainWindow mainWindow)
+                mainWindow.CinemaPlaceholder.Visibility = Visibility.Visible;
         }
     }
 }

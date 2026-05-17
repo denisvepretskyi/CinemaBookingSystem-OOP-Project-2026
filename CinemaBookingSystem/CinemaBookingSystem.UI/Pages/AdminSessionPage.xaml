@@ -53,29 +53,20 @@
             </DataGrid.ColumnHeaderStyle>
 
             <DataGrid.Columns>
-                <!-- Текстові колонки з прив'язкою до властивостей вашої моделі Movie -->
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" ElementStyle="{StaticResource CenterText}" Width="40" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Назва фільму" Binding="{Binding MovieTitle}" ElementStyle="{StaticResource VerticalCenterText}" Width="*" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Кінотеатр" Binding="{Binding CinemaName}" ElementStyle="{StaticResource VerticalCenterText}"   Width="150" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Час початку" Binding="{Binding StartTime}" ElementStyle="{StaticResource VerticalCenterText}" Width="150" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Час початку" Binding="{Binding StartTime, StringFormat='{}{0:dd.MM.yyyy HH:mm}'}" ElementStyle="{StaticResource VerticalCenterText}" Width="130" IsReadOnly="True"/>
 
-                <!-- Колонка з кнопками дій -->
+                <DataGridTextColumn Header="Продано квитків" Binding="{Binding SoldTickets}" ElementStyle="{StaticResource CenterText}" Width="120" IsReadOnly="True"/>
+
                 <DataGridTemplateColumn Header="Дії" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <!-- Кнопка Редагувати -->
-                                <Button Content="✏️" Width="30" Height="30" Margin="0,0,10,0" 
-                                        Background="Transparent" BorderThickness="0" Cursor="Hand" 
-                                        ToolTip="Редагувати" Click="EditSession_Click"/>
-
-                                <!-- Кнопка Видалити -->
-                                <Button Width="30" Height="30" 
-                                        Background="Transparent" BorderThickness="0" Cursor="Hand" 
-                                        ToolTip="Видалити" Click="DeleteSession_Click">
-
-                                    <Image Source="pack://application:,,,/Images/Delete.png" 
-                                     Stretch="Uniform" Margin="8" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                <Button Content="✏️" Width="30" Height="30" Margin="0,0,10,0" Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Редагувати" Click="EditSession_Click"/>
+                                <Button Width="30" Height="30" Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Видалити" Click="DeleteSession_Click">
+                                    <Image Source="pack://application:,,,/Images/Delete.png" Stretch="Uniform" Margin="8" RenderOptions.BitmapScalingMode="HighQuality"/>
                                 </Button>
                             </StackPanel>
                         </DataTemplate>

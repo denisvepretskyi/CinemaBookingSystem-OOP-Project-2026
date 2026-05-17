@@ -84,7 +84,7 @@ namespace CinemaBookingSystem.Core.Validators
             string message;
             var session = _sessionRepo.GetById(sessionId);
             if (session == null) return (false, "Сеанс не знайдено!");
-            if (startTime < DateTime.Now) return (false, "Цей сеанс вже минув!");
+            if (startTime < DateTime.Now) return (false, "Дата не може бути в минулому!");
             (bool isTimeConflict, message) = CheckTimeConflicts(cinemaId, hallId, movieId, startTime, sessionId);
             if (isTimeConflict) return (false, message);
             if (price <= 0) return (false, "Ціна має бути більшою за нуль!");

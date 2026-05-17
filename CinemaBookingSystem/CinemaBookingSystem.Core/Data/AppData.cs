@@ -10,8 +10,8 @@ namespace CinemaBookingSystem.Core.Data
     public static class AppData
     {
 
-        static string baseDir = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-        static string dataDir = System.IO.Path.Combine(baseDir, "Data");
+        static string baseDir = Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+        static string dataDir = Path.Combine(baseDir, "Data");
         public static IRepository<Cinema> Cinemas { get; }
         public static IRepository<Movie> Movies { get; }
         public static IRepository<Session> Sessions { get; }

@@ -105,6 +105,15 @@ namespace CinemaBookingSystem.UI.Pages
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (AppServices.AuthorizationService.currentUser.PhoneNumber != PhoneTextBox.Text)
+            {
+                var isPhoneExists = AppData.Users.IsPhoneExists(PhoneTextBox.Text);
+                if (isPhoneExists)
+                {
+                    MessageBox.Show("Цей номер телефону вже використовується!", "Помилка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+            }
             var numberValidation = UserValidator.IsValidPhoneNumber(PhoneTextBox.Text);
             if(!numberValidation.IsValid)
             {

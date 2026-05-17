@@ -15,7 +15,6 @@ namespace CinemaBookingSystem.Core.Services
         public static SessionManager SessionService { get; }
         public static StatisticManager StatisticService { get; }
         public static HallManager HallService { get; }
-
         public static SessionValidator SessionValidator { get; }
 
 
@@ -33,8 +32,5 @@ namespace CinemaBookingSystem.Core.Services
             StatisticService = new StatisticManager(AppData.Orders, AppData.Sessions, AppData.Movies, AppData.Cinemas);
             HallService = new HallManager();
         }
-
-
-
     }
 }
